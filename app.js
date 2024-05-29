@@ -1,9 +1,9 @@
-const mainEl = document .querySelector("main");
+const mainEl = document.querySelector("main");
 
-comsole.log(MainEl);
+console.log(mainEl);
 
 // setting the back color using our var method to grab an item from CSS
-mainEl.style.backgroudColor = "var(--main-bg)";
+mainEl.style.backgroundColor = "var(--main-bg)";
 
 // Creating an HTML element 
 const h1 = document.createElement("H1");
@@ -23,3 +23,24 @@ const topMenuEl = document.querySelector("#top-menu");
 topMenuEl.style.height = "100%";
 
 topMenuEl.style.backgroundColor = "var(--top-menu-bg)";
+
+topMenuEl.classList.add("flex-around");
+
+// Menu data structure
+const menuLinks = [
+    { text: 'about', href: '/about' },
+    { text: 'catalog', href: '/catalog' },
+    { text: 'orders', href: '/orders' },
+    { text: 'account', href: '/account' },
+  ];
+
+  menuLinks.forEach(link => {
+    // Create Anchor Element
+    const aElement = document.createElement("a");
+    aElement.href = link.href
+  
+    aElement.textContent = link.text;
+
+  topMenuEl.appendChild(aElement);
+  });
+
